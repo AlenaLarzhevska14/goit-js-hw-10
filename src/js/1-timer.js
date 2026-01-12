@@ -3,6 +3,9 @@ import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
 
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 const datetimePicker = document.getElementById('datetime-picker');
 const startButton = document.querySelector('[data-start]');
 const daysValue = document.querySelector('[data-days]');
@@ -12,6 +15,10 @@ const secondsValue = document.querySelector('[data-seconds]');
 
 let userSelectedDate = null;
 let countdownInterval = null;
+
+startButton.disabled = true;
+startButton.style.opacity = '0.5';
+startButton.style.cursor = 'not-allowed';
 
 const options = {
   enableTime: true,
